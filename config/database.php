@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => 'inventory',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,6 +61,20 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
+        ],
+
+        'inventory' => [
+            'driver' => 'mysql',
+            'host' => '10.10.80.47',
+            'port' => '3306',
+            'database' => 'inventory-management',
+            'username' => 'webdev',
+            'password' => '1234%^&*',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
         ],
 
         'pgsql' => [
