@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+/* for login design */
+
+.left-login{
+    background-color: white !important;
+}
+.right-login{
+    background-color: #00B0FF !important;
+    height: 100vh;
+}
+.login-t{
+    display: inline-block;
+    margin-top: 3%;
+    margin-left: 2%;
+    font-family: 'Noto Sans', sans-serif;
+    color: #00B0FF;
+    font-size: 36px;
+}
+.login-i{
+    margin-top: -2%;
+    margin-left: 5%;
+    height: 80px;
+    width: 80px;
+}
+.micon{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 60%;
+    width: 400px;
+    height: 500px;
+    max-width: 30%;
+}
+
+.logininput label{
+    text-align: left;
+    width:50%;
+    margin-bottom: 1%;
+    margin-left:7%;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16 !important;
+    color: #00B0FF !important;
+}
+
+.logininput input{
+    margin-left:15%;
+}
+.logininput input:focus{
+    border: 2px solid #00B0FF;
+    border-color: #00B0FF;
+}
+.loginb{
+    background-color: #00B0FF;
+    margin-left: -2%;
+    width: 420px !important;
+    height:40px;
+    border: none;
+}
+.loginb:hover{
+    background-color: #0086c4;
+}
+.forgot{
+    color:#707070;
+   padding:0;
+   margin: 0;
+}
+.titlel{
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    width:50%;
+    margin-top:3%;
+    margin-left:8%;
+    font-weight:bold;
+    font-size:16px
+}
+@media screen and (max-width: 767px) {
+    .right-login{
+        display: none;
+    }
+    .micon{
+        display: none;
+    }
+    .left-login{
+        text-align: center !important;
+    }
+    .titlel{
+        text-align: center !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+    .logininput input{
+        margin-left:6% !important;
+    }
+    #password,#email,.loginb{
+        width: 400px;
+        max-width:90%;
+    }
+    
+  }

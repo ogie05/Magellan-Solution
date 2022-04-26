@@ -18,12 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/des.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+        
+                {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -33,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -71,13 +70,35 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
-            </div>
-        </nav>
+                </div> --}}
+      
+      
 
-        <main class="py-4">
+        {{-- <main class="py-4">
             @yield('content')
-        </main>
+        </main> --}}
+    <div class="container-fluid parent">
+        <div class="row child">
+            <div class="col-md-9 left-login">
+                
+                <img src="{{ asset('img/magellanicon.svg') }}" class="login-i" alt="icon">
+                <span class="login-t">Magellan <span style="color: black">Performance</span></span>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="titlel" style="">THE <span style="color:#00B0FF">#1 CALL CENTER</span> SERVICES PROVIDER IN THE PHILLIPINES TRUSTED BY OVER 100+ SMES MONTHLY
+                            </p>
+                        </div>
+                        
+                        @yield('content')
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 right-login"></div>
+            <img src="{{ asset('img/middle-icon.svg') }}" alt="micon" class="micon">
+        </div>
+    
     </div>
 </body>
 </html>
