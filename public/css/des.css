@@ -29,7 +29,7 @@
     position: absolute;
     margin-top: 5%;
     margin-left: 60%;
-    width: 400px;
+    width: 700px;
     height: 500px;
     max-width: 30%;
 }
@@ -44,8 +44,8 @@
     color: #00B0FF !important;
 }
 
-.form-check-label{
-    margin-left: 0;
+.rememberLbl{
+    margin-left: 5px;
 }
 
 .logininput input{
@@ -72,15 +72,28 @@
    margin: 0;
 }
 .titlel{
-    font-family: 'Inter', sans-serif;
     text-align: left;
-    width:50%;
-    margin-top:3%;
-    margin-left:8%;
+    margin-top: .5em;
+    margin-left: 3em;
+    width:55%;
     font-weight:bold;
-    font-size:16px
+    font-size:1em;
 }
-@media screen and (max-width: 767px) {
+
+.sign h3{
+    font-weight: 700;
+    text-align: left;
+    margin-left: 1.5em;
+}
+.sign p{
+    font-weight: 600;
+    text-align: left;
+    font-size: 1em;
+    margin-left: 3em;
+    color: #707070;
+}
+
+@media screen and (max-width: 768px) {
     .right-login{
         display: none;
     }
@@ -95,12 +108,33 @@
         width: 100% !important;
         margin-left: 0 !important;
     }
-    .logininput input{
-        margin-left:6% !important;
+
+    .rememberLbl{
+        margin-left: 5px;
     }
+
+    .logininput input{
+        margin: 0 auto;
+    }
+
+    .logininput label{
+        margin-left: 0;
+    }
+
+    .sign h3{
+        font-weight: 700;
+        text-align: left;
+    }
+    .sign p{
+        font-weight: 600;
+        text-align: left;
+        font-size: 1em;
+        color: #707070;
+    }
+
     #password,#email,.loginb{
         /* width: 400px; */
-        max-width:90%;
+        max-width:100%;
     }
     
     .forms{
@@ -113,8 +147,13 @@
 
   /* for navbar */
   .nav-body img{
-    margin-left: 20%;
+    margin-left: .2em;
   }
+
+  /* .navbar-brand img{
+      background-color: red;
+  } */
+
 .logI{
     fill: white !important;
     width: 40px;
@@ -128,19 +167,17 @@
 .left-panel{
     background-color: #00B0FF !important;
     margin-right: -15px;
-
     margin-left: 0;
     height: 100vh;
     
 }
 
 .left-nav{
-    margin: 0;
-    padding: 0;
+    padding: 0 1em;
 }
 
 .left-button button{
-    margin-top: 1em;
+    margin-top: .8em;
     display: inline-block;
     padding: .5em 1em;
     border: none;
@@ -150,9 +187,8 @@
 }
 .left-button i{
     color: white;
-    font-size: 2em;
     margin-right: .5em;
-    font-size: 20px;
+    font-size: 1.8em;
 }
 
 .left-button button::after {
@@ -165,10 +201,8 @@
 }
 
 .left-button button:hover::after {
-    width: 100%;
+    width: 120%;
 }
-
-
 
 .rp{
     

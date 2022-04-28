@@ -3,9 +3,9 @@
 @section('content')
 <div class="container forms">
     <div class="row">
-        <div class="col-md-12">
-            <p style="font-family: 'Inter', sans-serif;text-align: left;width:50%;margin-top:2%;margin-left:5%;font-size:20px">Sign into your account</p>
-            <p style="font-family: 'Inter', sans-serif;text-align: left;margin-left:5%;font-size:14px;color:#7a7a7a">Welcome back!</p>
+        <div class="col-md-12 sign">
+            <h3>Sign into your account</h3>
+            <p>Welcome back!</p>
         </div>
         <div class="col-md-8">
             <form method="POST" action="{{ route('login') }}">
@@ -43,7 +43,7 @@
                     <div class="col-md-6">
                         <div class="form-check">
                             <input class="form-check-input" style="margin-left:10%" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label class="form-check-label" style="margin-left:0" for="remember">
+                            <label class="form-check-label rememberLbl" for="remember">
                                 {{ __('Remember Me') }}
                             </label>
                         
