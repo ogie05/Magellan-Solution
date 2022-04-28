@@ -71,13 +71,13 @@
         <div class="row">
             <div class="col-md-2 p-0">
                 <div class="left-panel">
-                    <div class="container">
+                    <div class="container-fluid left-nav">
                     <div class="row">
-                        <div class="left-button" style="margin-top: 10%;margin-left:15%">
-                            <div class="col-md-12"><i class="bi bi-bar-chart-fill"></i><button> Dashboard</button></div>
-                            <div class="col-md-12"><i class="bi bi-collection-fill"></i><button> Inventory</button></div>
-                            <div class="col-md-12"><i class="bi bi-collection-fill"></i><button> Log History</button></div>
-                            <div class="col-md-12"><i class="bi bi-collection-fill"></i><button> Reports</button></div>
+                        <div class="left-button">
+                            <div class="col-md-12"><button><i class="bi bi-bar-chart-fill"></i> Dashboard</button></div>
+                            <div class="col-md-12"><button><i class="fa-solid fa-apple-whole"></i> Inventory</button></div>
+                            <div class="col-md-12"><button><i class="bi bi-calendar2-range-fill"></i> Log History</button></div>
+                            <div class="col-md-12"><button><i class="bi bi-clipboard2-fill"></i> Reports</button></div>
                         </div>
                     </div>
                     </div>

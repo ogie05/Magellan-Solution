@@ -128,17 +128,46 @@
 .left-panel{
     background-color: #00B0FF !important;
     margin-right: -15px;
+    margin-left: 0;
+    height: 100vh;
     
 }
+
+.left-nav{
+    margin: 0;
+    padding: 0;
+}
+
 .left-button button{
-    margin-top: 15%;
-    background-color: transparent;
+    margin-top: 1em;
+    display: inline-block;
+    padding: .5em 1em;
     border: none;
+    background-color: transparent;
     color: white;
+    overflow: hidden;
 }
 .left-button i{
-    fill: white;
+    color: white;
+    font-size: 2em;
+    margin-right: .5em;
 }
+
+.left-button button::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background:white;
+    transition: width .3s;
+}
+
+.left-button button:hover::after {
+    width: 100%;
+}
+
+
+
 .rp{
     
     border-top-left-radius: 10px;
