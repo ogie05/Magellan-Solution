@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 /* for login design */
 
@@ -109,10 +110,41 @@
   }
 
 
-  /* ASDKASKD */
 
   /* for navbar */
   .nav-body img{
-    margin-left: 5%;
+    margin-left: 20%;
   }
+.logI{
+    fill: white !important;
+    width: 40px;
+    height: 40px;
+}
+.logoutb a{
+   text-align: center !important;
+}
 
+/* for left panel */
+.left-panel{
+    background-color: #00B0FF !important;
+    margin-right: -15px;
+    
+}
+.left-button button{
+    margin-top: 15%;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.left-button i{
+    fill: white;
+}
+.rp{
+    
+    border-top-left-radius: 10px;
+    background-color: #EFEFEF;
+}
+.right-panel{
+    margin-left: 5px;
+    
+}
