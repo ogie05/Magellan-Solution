@@ -43,6 +43,10 @@
     color: #00B0FF !important;
 }
 
+.form-check-label{
+    margin-left: 0;
+}
+
 .logininput input{
     margin-left:15%;
 }
@@ -52,6 +56,7 @@
 }
 .loginb{
     background-color: #00B0FF;
+    margin-top: 1.5em;
     margin-left: -2%;
     width: 420px !important;
     height:40px;
@@ -93,10 +98,14 @@
         margin-left:6% !important;
     }
     #password,#email,.loginb{
-        width: 400px;
+        /* width: 400px; */
         max-width:90%;
     }
     
+    .forms{
+        margin: 0 auto;
+    }
+
   }
 
 
