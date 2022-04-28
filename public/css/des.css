@@ -93,6 +93,11 @@
     color: #707070;
 }
 
+.left-button a{
+    text-decoration: none;
+    color: white;
+}
+
 @media screen and (max-width: 768px) {
     .right-login{
         display: none;
@@ -217,3 +222,4 @@
 .brand td,.brand th{
     text-align: center !important;
 }
+
