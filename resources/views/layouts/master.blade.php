@@ -73,11 +73,19 @@
                 <div class="left-panel">
                     <div class="container-fluid left-nav">
                     <div class="row">
+<<<<<<< HEAD:resources/views/layouts/dashboard/nav.blade.php
                         <div class="left-button">
                             <div class="col-md-12"><button><i class="bi bi-bar-chart-fill"></i> Dashboard</button></div>
                             <div class="col-md-12"><button><i class="fa-solid fa-apple-whole"></i> Inventory</button></div>
                             <div class="col-md-12"><button><i class="bi bi-calendar2-range-fill"></i> Log History</button></div>
                             <div class="col-md-12"><button><i class="bi bi-clipboard2-fill"></i> Reports</button></div>
+=======
+                        <div class="left-button" style="margin-top: 10%;margin-left:5%">
+                            <div class="col-md-12"><a href="{{ url('/dashboard') }}"><i class="bi bi-bar-chart-fill"></i><button> Dashboard</button></a></div>
+                            <div class="col-md-12"><a href="{{ url('/inventory') }}"><i class="bi bi-collection-fill"></i><button> Inventory</button></a></div>
+                            <div class="col-md-12"><i class="bi bi-calendar-check-fill"></i></i><button> Log History</button></div>
+                            <div class="col-md-12"><i class="bi bi-flag-fill"></i></i><button> Reports</button></div>
+>>>>>>> 561a8684bf1e6f7cc29f157c90e39e5af9daf92d:resources/views/layouts/master.blade.php
                         </div>
                     </div>
                     </div>
@@ -85,7 +93,7 @@
             </div>
             <div class="col-md-10 ps-1 rp">
                 <div class="right-panel">
-                    <h1>123</h1>
+                    @yield('main')
                 </div>
             </div>
         </div>
