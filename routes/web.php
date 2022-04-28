@@ -30,6 +30,3 @@ Route::middleware(['auth'])->group(function(){
 
     Route::post('/inventory/brand/create',[BrandController::class,'create'])->name('create');
 });
-
-
-

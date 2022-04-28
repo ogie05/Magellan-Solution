@@ -105,6 +105,7 @@
         $('#view').DataTable({
             "scrollX":true
         });
+        
         } );
     </script>
 </body>
