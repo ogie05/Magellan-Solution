@@ -73,11 +73,11 @@
                 <div class="left-panel">
                     <div class="container">
                     <div class="row">
-                        <div class="left-button" style="margin-top: 10%;margin-left:15%">
-                            <div class="col-md-12"><i class="bi bi-bar-chart-fill"></i><button> Dashboard</button></div>
-                            <div class="col-md-12"><i class="bi bi-collection-fill"></i><button> Inventory</button></div>
-                            <div class="col-md-12"><i class="bi bi-collection-fill"></i><button> Log History</button></div>
-                            <div class="col-md-12"><i class="bi bi-collection-fill"></i><button> Reports</button></div>
+                        <div class="left-button" style="margin-top: 10%;margin-left:5%">
+                            <div class="col-md-12"><a href="{{ url('/dashboard') }}"><i class="bi bi-bar-chart-fill"></i><button> Dashboard</button></a></div>
+                            <div class="col-md-12"><a href="{{ url('/inventory') }}"><i class="bi bi-collection-fill"></i><button> Inventory</button></a></div>
+                            <div class="col-md-12"><i class="bi bi-calendar-check-fill"></i></i><button> Log History</button></div>
+                            <div class="col-md-12"><i class="bi bi-flag-fill"></i></i><button> Reports</button></div>
                         </div>
                     </div>
                     </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="col-md-10 ps-1 rp">
                 <div class="right-panel">
-                    <h1>123</h1>
+                    @yield('main')
                 </div>
             </div>
         </div>
