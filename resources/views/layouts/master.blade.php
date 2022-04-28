@@ -80,10 +80,10 @@
                     <div class="row">
 
                         <div class="left-button" style="margin-top: 10%;margin-left:5%">
-                            <div class="col-md-12"><a href="{{ url('/dashboard') }}"><i class="bi bi-bar-chart-fill"></i><button> Dashboard</button></a></div>
-                            <div class="col-md-12"><a href="{{ url('/inventory') }}"><i class="bi bi-collection-fill"></i><button> Inventory</button></a></div>
-                            <div class="col-md-12"><i class="bi bi-calendar-check-fill"></i></i><button> Log History</button></div>
-                            <div class="col-md-12"><i class="bi bi-flag-fill"></i></i><button> Reports</button></div>
+                            <div class="col-md-12"><button><a href="{{ url('/dashboard') }}"><i class="bi bi-bar-chart-fill"></i> Dashboard</a></div>
+                            <div class="col-md-12"><button><a href="{{ url('/inventory') }}"><i class="bi bi-collection-fill"></i> Inventory</button></a></div>
+                            <div class="col-md-12"><button><i class="bi bi-calendar-check-fill"></i></i> Log History</button></div>
+                            <div class="col-md-12"><button><i class="bi bi-flag-fill"></i> Reports</button></div>
 
                         </div>
                     </div>
