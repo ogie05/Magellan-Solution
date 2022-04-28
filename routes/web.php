@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/inventory',[InventoryController::class,'index'])->name('inventory');
+    Route::get('/inventory/brand',[BrandController::class,'index'])->name('brand');
+
+    Route::post('/inventory/brand/create',[BrandController::class,'create'])->name('create');
 });
 
-Route::get('/inventory',[InventoryController::class,'index'])->name('inventory');
+
+

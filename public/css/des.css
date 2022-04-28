@@ -213,3 +213,7 @@
     margin-left: 5px;
     
 }
+
+.brand td,.brand th{
+    text-align: center !important;
+}
