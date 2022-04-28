@@ -43,7 +43,7 @@
     </div>
     <div class="row">
         <div class="col-md-12" style="margin-top: 5%">
-            <table class="table table-hover brand" id="view">
+            <table class="table table-hover brand" id="view" style="width: 100%">
                 <thead>
                   <tr>
                     <th scope="col">Id</th>

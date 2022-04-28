@@ -102,7 +102,10 @@
     <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready( function () {
-        $('#view').DataTable();
+        $('#view').DataTable({
+            "scrollX":true
+        });
+        
         } );
     </script>
 </body>
