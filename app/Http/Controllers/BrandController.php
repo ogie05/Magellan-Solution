@@ -36,7 +36,10 @@ class BrandController extends Controller
     }
 
     public function delete($id){
-       dd($id);
+        Brand::where('id', $id)->update([
+            'tag_deleted'=>1
+        ]);
+        return back();
     }
 
 }

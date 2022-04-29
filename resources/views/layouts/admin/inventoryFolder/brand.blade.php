@@ -80,9 +80,10 @@
                         <td>{{ $brand->tag_deleted }}</td>
                         <td>{!! view('layouts.admin.inventoryFolder.editmodal',['id'=>$brand->id,'name'=>$brand->name,'remarks'=>$brand->remarks]) !!}</td>
                         <td>
-                          
-                          
-                          <a href="{{ route('delete',$brand->id) }}"><button type="button" class="btn btn-danger">Delete</button></a>
+                         
+                          <a href="{{ route('delete',$brand->id) }}" id="hrefdel">
+                          {{-- <a href="{{ route('delete',$brand->id) }}"> --}}
+                          <button type="button" class="btn btn-danger" onclick="deleteb();">Delete</button></a>
                           
                         </td>
                         
