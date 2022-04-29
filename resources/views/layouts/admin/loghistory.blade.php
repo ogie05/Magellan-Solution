@@ -19,7 +19,7 @@
 
     <div class="row">
         <div class="col-md-12">
-           @yield('inv')
+           @yield('log')
         </div>
     </div>
 </div>
