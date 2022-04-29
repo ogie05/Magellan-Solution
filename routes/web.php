@@ -34,5 +34,4 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/loghistory', [LogController::class,'index'])->name('log');
 
-
 });

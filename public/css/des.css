@@ -234,3 +234,14 @@
     font-weight: 600;
 }
 
+#logs.dataTable thead th {
+    border-bottom: 0;
+  }
+#logs.dataTable tfoot th {
+    border-top: 0;
+  }
+
+.logs-table thead{
+    background-color:#202020 ;
+    color: white;
+}
