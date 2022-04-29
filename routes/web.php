@@ -29,6 +29,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/inventory',[InventoryController::class,'index'])->name('inventory');
     Route::get('/inventory/brand',[BrandController::class,'index'])->name('brand');
     Route::post('/inventory/brand/create',[BrandController::class,'create'])->name('create');
+    Route::post('/inventory/brand/edit',[BrandController::class,'edit'])->name('edit');
+    Route::get('/inventory/brand/delete/{id}',[BrandController::class,'delete'])->name('delete');
 
     Route::get('/loghistory', [LogController::class,'index'])->name('log');
+
+
 });

@@ -66,13 +66,25 @@
                         <td>{{ $brand->name }}</td>
                         <td>{{ $brand->status }}</td>
                         <td>{{ $brand->remarks }}</td>
+                        {{-- <td>{{ isset($brand->user->name) ? $brand->user->name : 'none'}}</td> --}}
+                        <td>
+                          @if ( isset($brand->user->name) )
+                            {{ $brand->user->name }}
+                            @else
+                           try
+                          @endif
+                        </td>
                         <td>{{ $brand->created_at }}</td>
-                        <td>{{ $brand->created_by }}</td>
-                        <td>{{ $brand->updated_at }}</td>
                         <td>{{ $brand->updated_by }}</td>
+                        <td>{{ $brand->updated_at }}</td>
                         <td>{{ $brand->tag_deleted }}</td>
-                        <td><button class="btn btn-primary editBtn" ><i class="bi bi-pencil-square"></i></button></td>
-                        <td><button class="btn btn-danger">Delete</button></td>
+                        <td>{!! view('layouts.admin.inventoryFolder.editmodal',['id'=>$brand->id,'name'=>$brand->name,'remarks'=>$brand->remarks]) !!}</td>
+                        <td>
+                          
+                          
+                          <a href="{{ route('delete',$brand->id) }}"><button type="button" class="btn btn-danger">Delete</button></a>
+                          
+                        </td>
                         
                     </tr>
                     @endforeach
@@ -82,7 +94,5 @@
         </div>
     </div>
 </div>
-
-
 
 @endsection
