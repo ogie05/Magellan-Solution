@@ -219,7 +219,18 @@
     
 }
 
+.brand{
+    border: 1.5px solid black;
+    margin-top: 2em;
+}
+
 .brand td,.brand th{
     text-align: center !important;
+}
+
+.brand th{
+    background-color:#e2e2e2 ;
+    color: #00B0FF;
+    font-weight: 600;
 }
 
