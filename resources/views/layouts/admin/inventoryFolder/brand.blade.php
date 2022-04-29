@@ -42,8 +42,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12" style="margin-top: 5%">
-            <table class="table table-hover brand" id="view" style="width: 100%">
+        <div class="col-md-12">
+            <table class="table table-hover brand" id="view" style="width: 110%">
                 <thead>
                   <tr>
                     <th scope="col">Id</th>
@@ -71,7 +71,7 @@
                         <td>{{ $brand->updated_at }}</td>
                         <td>{{ $brand->updated_by }}</td>
                         <td>{{ $brand->tag_deleted }}</td>
-                        <td><button class="btn btn-primary">Edit</button></td>
+                        <td><button class="btn btn-primary editBtn" ><i class="bi bi-pencil-square"></i></button></td>
                         <td><button class="btn btn-danger">Delete</button></td>
                         
                     </tr>
