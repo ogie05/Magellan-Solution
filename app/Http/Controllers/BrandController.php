@@ -11,7 +11,8 @@ class BrandController extends Controller
 {
     //
     public function index(){
-        $brands = Brand::all();
+        $brands = Brand::where('tag_deleted',0)->with(['user'])->get();
+      
         return view('layouts.admin.inventoryFolder.brand',compact('brands'));
     }
 
@@ -24,4 +25,18 @@ class BrandController extends Controller
         ]);
         return back();
     }
+
+    public function edit(Request $req){
+        $id = $req->brand_id;
+        Brand::where('id', $id)->update([
+            'name'=>$req->name,
+            'remarks'=>$req->remarks
+        ]);
+        return back();
+    }
+
+    public function delete($id){
+       dd($id);
+    }
+
 }
