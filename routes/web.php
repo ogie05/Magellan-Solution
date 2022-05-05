@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,11 +28,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/inventory',[InventoryController::class,'index'])->name('inventory');
+    //for brand
     Route::get('/inventory/brand',[BrandController::class,'index'])->name('brand');
     Route::post('/inventory/brand/create',[BrandController::class,'create'])->name('create');
     Route::post('/inventory/brand/edit',[BrandController::class,'edit'])->name('edit');
     Route::get('/inventory/brand/delete/{id}',[BrandController::class,'delete'])->name('delete');
 
+    //for department
+    Route::get('/inventory/department',[DepartmentController::class,'index'])->name('department');
+    Route::post('/inventory/department/create',[DepartmentController::class,'create'])->name('depcreate');
+
     Route::get('/loghistory', [LogController::class,'index'])->name('log');
 
 });
+

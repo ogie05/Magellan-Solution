@@ -3,22 +3,22 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add new brand
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#department">
+                Add new department
               </button>
             
             <!-- Button trigger modal -->
             
             
               <!-- Modal -->
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal fade" id="department" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                      <h5 class="modal-title" id="staticBackdropLabel">Add New Department</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('create') }}" method="POST">
+                    <form action="{{ route('depcreate') }}" method="POST">
                         @csrf
                         <div class="modal-body">
                             <div class="input-group mb-3">
@@ -60,35 +60,34 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($brands as $brand)
+                    @foreach ($departments as $deps)
                     <tr>
-                        <td>{{ $brand->id }}</td>   
-                        <td>{{ $brand->name }}</td>
-                        <td>{{ $brand->status }}</td>
-                        <td>{{ $brand->remarks }}</td>
+                        <td>{{ $deps->id }}</td>   
+                        <td>{{ $deps->name }}</td>
+                        <td>{{ $deps->status }}</td>
+                        <td>{{ $deps->remarks }}</td>
                         {{-- <td>{{ isset($brand->user->name) ? $brand->user->name : 'none'}}</td> --}}
                         <td>
-                          @if ( isset($brand->user->name) )
-                            {{ $brand->user->name }}
+                          @if ( isset($deps->user->name) )
+                            {{ $deps->user->name }}
                             @else
                            try
                           @endif
                         </td>
-                        <td>{{ $brand->created_at }}</td>
-                        <td>{{ $brand->updated_by }}</td>
-                        <td>{{ $brand->updated_at }}</td>
-                        <td>{{ $brand->tag_deleted }}</td>
-                        <td>{!! view('layouts.admin.inventoryFolder.editmodal',['id'=>$brand->id,'name'=>$brand->name,'remarks'=>$brand->remarks]) !!}</td>
+                        <td>{{ $deps->created_at }}</td>
+                        <td>{{ $deps->updated_by }}</td>
+                        <td>{{ $deps->updated_at }}</td>
+                        <td>{{ $deps->tag_deleted }}</td>
+                        {{-- <td>{!! view('layouts.admin.inventoryFolder.editmodal',['id'=>$brand->id,'name'=>$brand->name,'remarks'=>$brand->remarks]) !!}</td>
                         
-                        <td>
+                        <td> --}}
                           {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a> --}}
                           {{-- <a href="{{ route('delete',$brand->id) }}"> --}}
-                          <button type="button" class="btn btn-danger delb" data-href="{{ route('delete',$brand->id) }}">Delete</button>
-                        </td>
+                          {{-- <button type="button" class="btn btn-danger delb" data-href="{{ route('delete',$brand->id) }}">Delete</button>
+                        </td> --}}
                         
                     </tr>
                     @endforeach
-                  
                 </tbody>
               </table>
         </div>

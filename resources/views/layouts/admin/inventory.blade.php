@@ -11,7 +11,8 @@
 
         <div class="col-md-4 offset-5">
             <a href="{{ route('brand') }}"><button class="btn btn-primary">Brand</button></a>
-            <button class="btn btn-danger">Department</button>
+            <a href="{{ route('department') }}"><button class="btn btn-primary">Department</button></a>
+            
             <button class="btn btn-warning">Model</button>
             
         </div>

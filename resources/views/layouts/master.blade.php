@@ -27,6 +27,7 @@
     
 </head>
 <body>
+    @include('sweetalert::alert')
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 p-0">
@@ -113,6 +114,6 @@
     </script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/script.js') }}"></script>
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
