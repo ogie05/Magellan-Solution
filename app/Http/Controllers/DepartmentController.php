@@ -15,12 +15,29 @@ class DepartmentController extends Controller
         return view('layouts.admin.inventoryFolder.department',compact('departments'));
     }
 
+    public function edit(Request $req){
+        $id = $req->dep_id;
+        Department::where('id',$id)->update([
+            'name' => $req->name,
+            'remarks' => $req->remarks
+        ]);
+        return back();
+    }
+
     public function create(Request $req){
         Department::create([
             'name' => $req->name,
             'remarks' => $req->remarks,
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id
+        ]);
+        return back();
+    }
+
+    public function delete($id){
+        // dd($id);
+        Department::where('id',$id)->update([
+            'tag_deleted' => 1
         ]);
         return back();
     }

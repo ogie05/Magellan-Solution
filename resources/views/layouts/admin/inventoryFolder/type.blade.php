@@ -3,22 +3,22 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12" style="margin: 2% !important">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#department">
-                Add new department
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#type">
+                Add new type
               </button>
             
             <!-- Button trigger modal -->
             
             
               <!-- Modal -->
-              <div class="modal fade" id="department" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal fade" id="type" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Add New Department</h5>
+                      <h5 class="modal-title" id="staticBackdropLabel">Add New Type</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('depcreate') }}" method="POST">
+                    <form action="{{ route('typecreate') }}" method="POST">
                         @csrf
                         <div class="modal-body">
                             <div class="input-group mb-3">
@@ -60,30 +60,30 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($departments as $deps)
+                    @foreach ($types as $type)
                     <tr>
-                        <td>{{ $deps->id }}</td>   
-                        <td>{{ $deps->name }}</td>
-                        <td>{{ $deps->status }}</td>
-                        <td>{{ $deps->remarks }}</td>
+                        <td>{{ $type->id }}</td>   
+                        <td>{{ $type->name }}</td>
+                        <td>{{ $type->status }}</td>
+                        <td>{{ $type->remarks }}</td>
                         {{-- <td>{{ isset($brand->user->name) ? $brand->user->name : 'none'}}</td> --}}
                         <td>
-                          @if ( isset($deps->user->name) )
-                            {{ $deps->user->name }}
+                          @if ( isset($type->user->name) )
+                            {{ $type->user->name }}
                             @else
                            none
                           @endif
                         </td>
-                        <td>{{ $deps->created_at }}</td>
-                        <td>{{ $deps->updated_by }}</td>
-                        <td>{{ $deps->updated_at }}</td>
-                        <td>{{ $deps->tag_deleted }}</td>
-                         <td>{!! view('layouts.admin.inventoryFolder.editmodaldep',['id'=>$deps->id,'name'=>$deps->name,'remarks'=>$deps->remarks])!!} </td>
+                        <td>{{ $type->created_at }}</td>
+                        <td>{{ $type->updated_by }}</td>
+                        <td>{{ $type->updated_at }}</td>
+                        <td>{{ $type->tag_deleted }}</td>
+                         <td>{!! view('layouts.admin.inventoryFolder.editmodaltype',['id'=>$type->id,'name'=>$type->name,'remarks'=>$type->remarks])!!} </td>
                         
                         <td> 
                            {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a> 
                            <a href="{{ route('delete',$brand->id) }}">  --}}
-                           <button type="button" class="btn btn-danger delbdep" data-href="{{ route('depdel',$deps->id) }}">Delete</button>
+                           <button type="button" class="btn btn-danger delbtype" data-href="{{ route('typedel',$type->id) }}">Delete</button>
                         </td> 
                         
                     </tr>

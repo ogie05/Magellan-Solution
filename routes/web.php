@@ -5,6 +5,10 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\ModelController;
+use App\Http\Controllers\TypeController;
+use App\Models\Department;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +41,22 @@ Route::middleware(['auth'])->group(function(){
     //for department
     Route::get('/inventory/department',[DepartmentController::class,'index'])->name('department');
     Route::post('/inventory/department/create',[DepartmentController::class,'create'])->name('depcreate');
+    Route::post('/inventory/department/edit',[DepartmentController::class,'edit'])->name('depedit');
+    Route::get('/inventory/department/delete/{id}',[DepartmentController::class,'delete'])->name('depdel');
+
+    //for model
+    Route::get('/inventory/model', [ModelController::class, 'index'])->name('model');
+    Route::post('/inventory/model/create',[ModelController::class,'create'])->name('modcreate');
+    Route::post('/inventory/model/edit', [ModelController::class, 'edit'])->name('modedit');
+    Route::get('/inventory/model/delete/{id}', [ModelController::class, 'delete'])->name('moddel');
+
+    //for type
+    Route::get('/inventory/type', [TypeController::class, 'index'])->name('type');
+    Route::post('/inventory/type/create',[TypeController::class,'create'])->name('typecreate');
+    Route::post('/inventory/type/edit', [TypeController::class, 'edit'])->name('typeedit');
+    Route::get('/inventory/type/delete/{id}', [TypeController::class, 'delete'])->name('typedel');
+
 
     Route::get('/loghistory', [LogController::class,'index'])->name('log');
-
 });
 
