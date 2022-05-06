@@ -22,15 +22,11 @@
         </div>
 
         <div class="col-md-4 offset-5">
-<<<<<<< HEAD
-
-=======
             <a href="{{ route('brand') }}"><button class="btn btn-primary">Brand</button></a>
             <a href="{{ route('department') }}"><button class="btn btn-primary">Department</button></a>
             
             <button class="btn btn-warning">Model</button>
             
->>>>>>> 7a7bb75316222885067d5a9398418ada32bdeafe
         </div>
     </div>
 
