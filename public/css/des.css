@@ -179,6 +179,7 @@
 
 .left-nav{
     padding: 0 1em;
+    
 }
 
 .left-button button{
@@ -244,4 +245,11 @@
 .logs-table thead{
     background-color:#202020 ;
     color: white;
+}
+
+.log-header{
+    margin-top: 2em;
+}
+.inv-header{
+    margin-top: 2em;
 }
