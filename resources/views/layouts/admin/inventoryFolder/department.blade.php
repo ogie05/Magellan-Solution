@@ -2,7 +2,7 @@
 @section('inv')
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin: 2% !important">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#department">
                 Add new department
               </button>

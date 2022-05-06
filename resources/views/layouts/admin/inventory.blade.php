@@ -14,21 +14,19 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 offset-4">
+              <a href="{{ route('brand') }}"><button class="btn btn-primary">Brand</button></a>
+              <a href="{{ route('department') }}"><button class="btn btn-primary">Department</button></a>
+              <button class="btn btn-warning">Model</button> 
+            </div>
+            {{-- <div class="col-md-4">
                 <a href="{{ route('brand') }}"><button class="btn btn-primary">Brand</button></a>
                 <button class="btn btn-danger">Department</button>
                 <button class="btn btn-warning">Model</button>
-            </div>
+            </div> --}}
         </div>
 
-        <div class="col-md-4 offset-5">
-            <a href="{{ route('brand') }}"><button class="btn btn-primary">Brand</button></a>
-            <a href="{{ route('department') }}"><button class="btn btn-primary">Department</button></a>
-            
-            <button class="btn btn-warning">Model</button>
-            
-        </div>
-    </div>
+        
 
     <div class="row">
         <div class="col-md-12">
