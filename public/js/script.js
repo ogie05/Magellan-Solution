@@ -1,7 +1,7 @@
-function deleteb(){
 
-
-Swal.fire({
+$(".delb").click(function (){
+  var route = $(this).data('href');
+  Swal.fire({
     title: 'Are you sure?',
     text: "You won't be able to revert this!",
     icon: 'warning',
@@ -10,13 +10,16 @@ Swal.fire({
     cancelButtonColor: '#d33',
     confirmButtonText: 'Yes, delete it!'
   }).then((result) => {
-    if (result.isConfirmed) {
+  
+
+    if (result.isConfirmed == true) {
       Swal.fire(
         'Deleted!',
         'Your file has been deleted.',
         'success',
-      )
-      window.location.href = document.getElementById('hrefdel').href;
+      );
+      window.location.href=route;
     }
   })
-}
+
+})
