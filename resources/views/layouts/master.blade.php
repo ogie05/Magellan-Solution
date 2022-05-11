@@ -82,6 +82,7 @@
                         <div class="left-button">
                             <div class="col-md-12"><button><a href="{{ url('/dashboard') }}"><i class="bi bi-bar-chart-fill"></i> Dashboard</button></a></div>
                             <div class="col-md-12"><button><a href="{{ url('/inventory') }}"><i class="bi bi-collection-fill"></i> Inventory</button></a></div>
+                            <div class="col-md-12"><button><a href="{{ url('/process') }}"><i class="bi bi-cpu-fill"></i> Process</button></a></div>
                             <div class="col-md-12"><button><a href="{{ url('/loghistory') }}"><i class="bi bi-calendar-check-fill"></i></i> Log History</button></a></div>
                             <div class="col-md-12"><button><i class="bi bi-calendar2-fill"></i> Reports</button></div>
 

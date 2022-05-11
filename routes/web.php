@@ -7,8 +7,8 @@ use App\Http\Controllers\LogController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ModelController;
 use App\Http\Controllers\TypeController;
+use App\Http\Controllers\Process\ProcessController;
 use App\Models\Department;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +56,11 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/inventory/type/edit', [TypeController::class, 'edit'])->name('typeedit');
     Route::get('/inventory/type/delete/{id}', [TypeController::class, 'delete'])->name('typedel');
 
-
+    //for process
+    Route::get('/process',[ProcessController::class,'index'])->name('process');
+    Route::get('/generate', function () {
+    return view('layouts.admin.processFolder.generate');
+    });
     Route::get('/loghistory', [LogController::class,'index'])->name('log');
 });
 
