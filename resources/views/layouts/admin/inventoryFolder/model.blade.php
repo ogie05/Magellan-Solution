@@ -3,22 +3,22 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12" style="margin: 2% !important">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#department">
-                Add new department
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#model">
+                Add new model
               </button>
             
             <!-- Button trigger modal -->
             
             
               <!-- Modal -->
-              <div class="modal fade" id="department" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal fade" id="model" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Add New Department</h5>
+                      <h5 class="modal-title" id="staticBackdropLabel">Add New Model</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('depcreate') }}" method="POST">
+                    <form action="{{ route('modcreate') }}" method="POST">
                         @csrf
                         <div class="modal-body">
                             <div class="input-group mb-3">
@@ -60,34 +60,35 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($departments as $deps)
-                    <tr>
-                        <td>{{ $deps->id }}</td>   
-                        <td>{{ $deps->name }}</td>
-                        <td>{{ $deps->status }}</td>
-                        <td>{{ $deps->remarks }}</td>
-                        {{-- <td>{{ isset($brand->user->name) ? $brand->user->name : 'none'}}</td> --}}
-                        <td>
-                          @if ( isset($deps->user->name) )
-                            {{ $deps->user->name }}
-                            @else
-                           none
-                          @endif
-                        </td>
-                        <td>{{ $deps->created_at }}</td>
-                        <td>{{ $deps->updated_by }}</td>
-                        <td>{{ $deps->updated_at }}</td>
-                        <td>{{ $deps->tag_deleted }}</td>
-                         <td>{!! view('layouts.admin.inventoryFolder.editmodaldep',['id'=>$deps->id,'name'=>$deps->name,'remarks'=>$deps->remarks])!!} </td>
-                        
-                        <td> 
-                           {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a> 
-                           <a href="{{ route('delete',$brand->id) }}">  --}}
-                           <button type="button" class="btn btn-danger delbdep" data-href="{{ route('depdel',$deps->id) }}">Delete</button>
-                        </td> 
-                        
-                    </tr>
-                    @endforeach
+                  @foreach ($models as $mod)
+                  <tr>
+                      <td>{{ $mod->id }}</td>   
+                      <td>{{ $mod->name }}</td>
+                      <td>{{ $mod->status }}</td>
+                      <td>{{ $mod->remarks }}</td>
+                      {{-- <td>{{ isset($brand->user->name) ? $brand->user->name : 'none'}}</td> --}}
+                      <td>
+                        @if ( isset($mod->user->name) )
+                          {{ $mod->user->name }}
+                          @else
+                         none
+                        @endif
+                      </td>
+                      <td>{{ $mod->created_at }}</td>
+                      <td>{{ $mod->updated_by }}</td>
+                      <td>{{ $mod->updated_at }}</td>
+                      <td>{{ $mod->tag_deleted }}</td>
+                       <td>{!! view('layouts.admin.inventoryFolder.editmodalmod',['id'=>$mod->id,'name'=>$mod->name,'remarks'=>$mod->remarks])!!} </td>
+                      
+                      <td> 
+                         {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a> 
+                         <a href="{{ route('delete',$brand->id) }}">  --}}
+                         <button type="button" class="btn btn-danger delbmod" data-href="{{ route('moddel',$mod->id) }}">Delete</button>
+                      </td> 
+                      
+                  </tr>
+                  @endforeach
+                   
                 </tbody>
               </table>
         </div>

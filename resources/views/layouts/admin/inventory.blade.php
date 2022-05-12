@@ -14,6 +14,7 @@
               </div>
             </div>
 
+<<<<<<< HEAD
             <div class="col-md-8 inv-btn ">
               <a href="{{ route('brand') }}"><button class="btn">Brand</button></a>
               <a href="{{ route('department') }}"><button class="btn">Department</button></a>
@@ -54,6 +55,13 @@
                       </div>
                     </div>
                   </div>
+=======
+            <div class="col-md-4 offset-4">
+              <a href="{{ route('type') }}"><button class="btn btn-primary">Type</button></a>
+              <a href="{{ route('brand') }}"><button class="btn btn-primary">Brand</button></a>
+              <a href="{{ route('department') }}"><button class="btn btn-primary">Department</button></a>
+              <a href="{{ route('model') }}"><button class="btn btn-warning">Model</button></a>
+>>>>>>> 79c3bcb2471be5f4a2e1bd8eb26c368e00d5516b
             </div>
             {{-- <div class="col-md-4">
                 <a href="{{ route('brand') }}"><button class="btn btn-primary">Brand</button></a>

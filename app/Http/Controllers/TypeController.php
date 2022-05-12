@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Brand;
+use App\Models\Type;
 use App\Models\LogHistory;
 use Illuminate\Support\Facades\Auth;
 
-
-class BrandController extends Controller
+class TypeController extends Controller
 {
     //
     public function index(){
-        $brands = Brand::where('tag_deleted',0)->with(['user'])->get();
-      
-        return view('layouts.admin.inventoryFolder.brand',compact('brands'));
+        $types = Type::where('tag_deleted',0)->with(['user'])->get();
+        return view('layouts.admin.inventoryFolder.type',compact('types'));
     }
 
     public function create(Request $req){
-        Brand::create([
+
+        Type::create([
             'name' => $req->name,
             'remarks' => $req->remarks,
             'created_by' => Auth::user()->id,
@@ -27,45 +26,46 @@ class BrandController extends Controller
 
         $name = Auth::user()->name;
         LogHistory::create([
-            'description' => "New brand created by ".$name,
+            'description' => "New type created by ".$name,
             'user' => $name,
             'user_id' => Auth::user()->id,
             'tag_deleted' =>0
         ]);
+
         return back();
     }
 
     public function edit(Request $req){
-        $id = $req->brand_id;
-        Brand::where('id', $id)->update([
-            'name'=>$req->name,
-            'remarks'=>$req->remarks
+        $id = $req->type_id;
+        Type::where('id',$id)->update([
+            'name' => $req->name,
+            'remarks' => $req->remarks,
         ]);
 
         $name = Auth::user()->name;
         LogHistory::create([
-            'description' => "Brand id: ".$id." name edited to ".$req->name." and remarks edited to ".$req->remarks." by ".$name,
+            'description' => "Type id: ".$id." name edited to ".$req->name." and remarks edited to ".$req->remarks." by ".$name,
             'user' => $name,
             'user_id' => Auth::user()->id,
             'tag_deleted' =>0
         ]);
+
         return back();
     }
 
     public function delete($id){
-        
-        Brand::where('id', $id)->update([
-            'tag_deleted'=>1
+        Type::where('id',$id)->update([
+            'tag_deleted' => 1
         ]);
 
         $name = Auth::user()->name;
         LogHistory::create([
-            'description' => "User ".$name." deleted brand id ".$id,
+            'description' => "User ".$name." deleted type id ".$id,
             'user' => $name,
             'user_id' => Auth::user()->id,
             'tag_deleted' =>0
         ]);
+
         return back();
     }
-
 }
