@@ -31,50 +31,69 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 p-0">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-body">
-                    <div class="container-fluid">
-                      {{-- <a class="navbar-brand" href="#"><img src="{{ asset('img/navicon.png') }}" alt="nav-icon"></a> --}}
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarNav">
-
-
-                        <ul class="navbar-nav ms-auto">
-                          <li class="nav-item">
-                           <div class="nav-item dropdown d-flex">
-                            
-                            <p style="color: #00B0FF;font-size:16px">{{ Auth::user()->name }}</p>
-                            <img src="{{ asset('img/person-fill.svg') }}" alt="icon" class="logI">
-                            
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    
-                                </a>
-                                
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" style="text-align:center">Administrator</a>
-                                    <a class="dropdown-item" style="text-align:center">TBD</a>
-                                    <a class="dropdown-item" style="text-align:center">TBD</a>
-                                    <a class="dropdown-item" style="text-align:center" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                  document.getElementById('logout-form').submit();">
-                                     {{ __('Logout') }}
-                                 </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light shadow-sm">
+                    <div class="container">
+                        <a class="fs-6 navLogo" href="{{ url('dashboard') }}">
+                            Magellan <span>Solutions</span>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!-- Left Side Of Navbar -->
+                            <ul class="navbar-nav me-auto">
+        
+                            </ul>
+        
+                            <!-- Right Side Of Navbar -->
+                            <ul class="navbar-nav ms-auto">
+                                <!-- Authentication Links -->
+                                @guest
+                                    @if (Route::has('login'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        </li>
+                                    @endif
+        
+                                    @if (Route::has('register'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <i class="bi bi-person-fill fs-5"></i>
+                                            {{ Auth::user()->name }}
+                                        </a>
+        
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" ><i class="bi bi-person-fill width="16" height="16""></i> Profile</a>
+                                            <a class="dropdown-item" ><i class="bi bi-gear-fill"></i>  Settings</a>
+                                            <a class="dropdown-item"><i class="bi bi-info-square-fill"></i> Help & Support</a>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                             <i class="bi bi-arrow-right-square-fill"></i>
+                                                {{ __('Logout') }}
+                                            </a>
+        
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                @endguest
+                            </ul>
+                        </div>
                     </div>
-                  </nav>
+                </nav>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-2 p-0">
+            <div class="col-md-2 p-0 sticky-top">
                 <div class="left-panel">
                     <div class="container-fluid left-nav">
                     <div class="row">
@@ -82,7 +101,7 @@
                         <div class="left-button">
                             <div class="col-md-12"><button><a href="{{ url('/dashboard') }}"><i class="bi bi-bar-chart-fill"></i> Dashboard</button></a></div>
                             <div class="col-md-12"><button><a href="{{ url('/inventory') }}"><i class="bi bi-collection-fill"></i> Inventory</button></a></div>
-                            <div class="col-md-12"><button><a href="{{ url('/process') }}"><i class="bi bi-cpu-fill"></i> Process</button></a></div>
+                            <div class="col-md-12"><button><a href="{{ url('/process') }}"><i class="bi bi-filter-square-fill"></i> Process</button></a></div>
                             <div class="col-md-12"><button><a href="{{ url('/loghistory') }}"><i class="bi bi-calendar-check-fill"></i></i> Log History</button></a></div>
                             <div class="col-md-12"><button><i class="bi bi-calendar2-fill"></i> Reports</button></div>
 
@@ -105,6 +124,7 @@
         $(document).ready( function () {
         $('#view').DataTable({
             "scrollX":true
+            
         });
         $('#logs').DataTable({
             "scrollX":true
@@ -115,5 +135,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </body>
 </html>

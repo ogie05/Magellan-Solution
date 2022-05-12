@@ -10,7 +10,7 @@
             <div class="col-md-4">
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Name, type, brand, action..." aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <button class="btn btn-primary pt-1" type="button" id="button-addon1"><i class="bi bi-search"></i></button>
+                <button class="btn btn-primary pt-1" type="button" id="button-addon1"><i class="bi bi-search" data-toggle="tooltip" data-placement="top" title="Search"></i></button>
               </div>
             </div>
 

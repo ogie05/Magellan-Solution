@@ -7,11 +7,14 @@
         </div>
       </div>
         <div class="row">
-            <div class="col-md-4 mt-2">
-              <div class="input-group mb-3">
+            <div class="col-md-4 mt-2 d-flex justify-content-around">
+              <div class="input-group mb-2">
                 <input type="text" class="form-control" placeholder="Name, type, brand, action..." aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <button class="btn btn-primary pt-1" type="button" id="button-addon1"><i class="bi bi-search"></i></button>
+                <button class="btn btn-primary pt-1" type="button" id="button-addon1" data-toggle="tooltip" data-placement="top" title="Search"><i class="bi bi-search"></i></button>
+
               </div>
+
+              
             </div>
 
             <div class="col-md-7 offset-1">
