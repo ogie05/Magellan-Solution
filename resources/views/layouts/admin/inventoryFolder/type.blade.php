@@ -26,6 +26,10 @@
                                 <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" name="name">
                             </div>
                             <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1">Alias</span>
+                              <input type="text" class="form-control" placeholder="Alias" aria-label="Alias" aria-describedby="basic-addon1" name="alias">
+                          </div>
+                            <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Remarks</span>
                                 <input type="text" class="form-control" placeholder="Remarks" aria-label="Remarks" aria-describedby="basic-addon1" name="remarks">
                             </div>
@@ -48,6 +52,7 @@
                   <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Alias</th>
                     <th scope="col">Status</th>
                     <th scope="col">Remarks</th>
                     <th scope="col">Created By</th>
@@ -64,6 +69,7 @@
                     <tr>
                         <td>{{ $type->id }}</td>   
                         <td>{{ $type->name }}</td>
+                        <td>{{ $type->alias }}</td>
                         <td>{{ $type->status }}</td>
                         <td>{{ $type->remarks }}</td>
                         {{-- <td>{{ isset($brand->user->name) ? $brand->user->name : 'none'}}</td> --}}
@@ -78,7 +84,7 @@
                         <td>{{ $type->updated_by }}</td>
                         <td>{{ $type->updated_at }}</td>
                         <td>{{ $type->tag_deleted }}</td>
-                         <td>{!! view('layouts.admin.inventoryFolder.editmodaltype',['id'=>$type->id,'name'=>$type->name,'remarks'=>$type->remarks])!!} </td>
+                         <td>{!! view('layouts.admin.inventoryFolder.editmodaltype',['id'=>$type->id,'name'=>$type->name,'alias'=>$type->alias,'remarks'=>$type->remarks])!!} </td>
                         
                         <td> 
                            {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a> 

@@ -58,9 +58,11 @@ Route::middleware(['auth'])->group(function(){
 
     //for process
     Route::get('/process',[ProcessController::class,'index'])->name('process');
-    Route::get('/generate', function () {
-    return view('layouts.admin.processFolder.generate');
-    });
+    Route::get('/process/generateqrcode',[ProcessController::class,'generateqrcode'])->name('generateqrcode');
+    
+    Route::post('/process/generateqrcode/create',[ProcessController::class,'generateqrcode'])->name('generateqrcodecreate');
+    Route::get('/process/processgeneratedqr', [ProcessController::class,'processgeneratedqr'])->name('generatedqr');
+
     Route::get('/loghistory', [LogController::class,'index'])->name('log');
 });
 

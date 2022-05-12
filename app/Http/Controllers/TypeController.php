@@ -19,6 +19,7 @@ class TypeController extends Controller
 
         Type::create([
             'name' => $req->name,
+            'alias' => $req->alias,
             'remarks' => $req->remarks,
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id
@@ -39,12 +40,13 @@ class TypeController extends Controller
         $id = $req->type_id;
         Type::where('id',$id)->update([
             'name' => $req->name,
+            'alias' => $req->alias,
             'remarks' => $req->remarks,
         ]);
 
         $name = Auth::user()->name;
         LogHistory::create([
-            'description' => "Type id: ".$id." name edited to ".$req->name." and remarks edited to ".$req->remarks." by ".$name,
+            'description' => "Type id: ".$id." name edited to ".$req->name." alias edited to ".$req->alias." and remarks edited to ".$req->remarks." by ".$name,
             'user' => $name,
             'user_id' => Auth::user()->id,
             'tag_deleted' =>0

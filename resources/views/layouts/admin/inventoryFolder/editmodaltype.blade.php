@@ -19,6 +19,10 @@
                   <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" value="{{ $name }}" name="name">
               </div>
               <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Alias</span>
+                <input type="text" class="form-control" placeholder="Alias" aria-label="Alias" aria-describedby="basic-addon1" value="{{ $alias }}" name="alias">
+            </div>
+              <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Remarks</span>
                   <input type="text" class="form-control" placeholder="Remarks" aria-label="Remarks" aria-describedby="basic-addon1" value="{{ $remarks }}" name="remarks">
               </div>

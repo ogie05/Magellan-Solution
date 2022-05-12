@@ -10,7 +10,7 @@ class Type extends Model
     use HasFactory;
 
     protected $table = 'mst_type';
-    protected $fillable = ['name','status','remarks','created_by','updated_by','tag_deleted','sequence_no'];
+    protected $fillable = ['name','alias','status','remarks','created_by','updated_by','tag_deleted','sequence_no'];
 
     public function user(){
         return $this->hasOne(User::class,'id','created_by');
