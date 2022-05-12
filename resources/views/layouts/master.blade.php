@@ -76,7 +76,7 @@
         <div class="row">
             <div class="col-md-2 p-0">
                 <div class="left-panel">
-                    <div class="container-fluid left-nav">
+                    <div class="container-fluid left-nav sticky-top">
                     <div class="row">
 
                         <div class="left-button">
@@ -104,6 +104,7 @@
         $(document).ready( function () {
         $('#view').DataTable({
             "scrollX":true
+            
         });
         $('#logs').DataTable({
             "scrollX":true
