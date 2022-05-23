@@ -18,20 +18,20 @@ class ProcessController extends Controller
         $types = Type::all();
         $brands = Brand::all();
         $models = MyModel::all();
-        return view('layouts.admin.processFolder.processIndex',compact('types','brands','models'));
+        return view('layouts.admin.processIndex',compact('types','brands','models'));
 
     }
 
-    public function generateqrcode(){
-        return view('layouts.admin.processFolder.generateqrcode');
-    }
+    // public function generateqrcode(){
+    //     $types = Type::all();
+    //     $brands = Brand::all();
+    //     $models = MyModel::all();
+    //     return view('layouts.admin.processFolder.generateqrcode',compact('types','brands','models'));
+    // }
 
     public function generateqr(Request $req){
         $how = $req->number;
-
         for($x = 1;$x<=$how;$x++){
-
-
             $type = Type::where('id',$req->type)->first();
             $cc = SystemSettings::where('id',2)->first();
             
@@ -49,10 +49,15 @@ class ProcessController extends Controller
                 SystemSettings::where('id',2)->update([
                     'value' => $cc->value+1
                 ]);
-
-
         }
         return back();
+    }
+
+    public function manual(){
+        $types = Type::all();
+        $brands = Brand::all();
+        $models = MyModel::all();
+        return view('layouts.admin.processFolder.manualencode',compact('types','brands','models'));
     }
 
     public function processgeneratedqr(){

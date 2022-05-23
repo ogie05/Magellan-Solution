@@ -58,11 +58,9 @@ Route::middleware(['auth'])->group(function(){
 
     //for process
     Route::get('/process',[ProcessController::class,'index'])->name('process');
-    Route::get('/process/generateqrcode',[ProcessController::class,'generateqrcode'])->name('generateqrcode');
-    
-    Route::post('/process/generateqrcode/create     ',[ProcessController::class,'generateqrcode'])->name('generateqrcodecreate');
-    Route::get('/process/processgeneratedqr', [ProcessController::class,'processgeneratedqr'])->name('generatedqr');
+    Route::post('/process/generateqrcode',[ProcessController::class,'generateqr'])->name('generateqrcode');
 
+    Route::get('/process/manual-encode',[ProcessController::class,'manual'])->name('manualencode');
     Route::get('/loghistory', [LogController::class,'index'])->name('log');
 });
 
