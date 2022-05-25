@@ -93,7 +93,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table table-hover brand" id="view" style="width: 105% height:300px;">
+                        <form action="{{ route('manualencode-submit') }}" method="POST">
+                            @csrf
+                        <table class="table table-hover table-responsive brand" id="manualt" style="display:block;overflow-x:auto">
+                            
                             <thead>
                               <tr>
                                 <th scope="col">Id</th>
@@ -112,16 +115,16 @@
                               </tr>
                             </thead>
                             <tbody>
-                             
+                                
                                 <tr>
-                                    <td>1</td>
-                                    <td><div class="col-auto"><input type="text" class="form-control"></div></td>
+                                    <td id="manualid" value="1">1</td>
+                                    <td><div class="col-auto"><input type="text" class="form-control" name="uid"></div></td>
                                     <td>
                                         <div class="col-auto">
-                                            <select type="text" class="form-select">
+                                            <select type="text" class="form-select" name="type">
                                                 <option selected>Select</option>
                                                 @foreach ($types as $type)
-                                                    <option value="1">{{ $type->name }}</option>
+                                                    <option value="{{ $type->id }}">{{ $type->name }}</option>
                                                 @endforeach
                                                 
                                             </select>
@@ -129,26 +132,26 @@
                                     </td>
                                     <td>
                                         <div class="col-auto">
-                                            <select type="text" class="form-select">
+                                            <select type="text" class="form-select" name="brand">
                                                 <option selected>Select</option>
                                                 @foreach ($brands as $brand)
-                                                    <option value="1">{{ $brand->name }}</option>
+                                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="col-auto">
-                                            <select type="text" class="form-select">
+                                            <select type="text" class="form-select" name="model">
                                                 <option selected>Select</option>
                                                 @foreach ($models as $model)
-                                                    <option value="1">{{ $model->name }}</option>
+                                                    <option value="{{ $model->id }}">{{ $model->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </td>
-                                    <td><div class="col-auto"><input type="text" class="form-control"></div></td>
-                                    <td><div class="col-auto"><input type="text" class="form-control"></div></td>
+                                    <td><div class="col-auto"><input type="text" class="form-control" name="serial"></div></td>
+                                    <td><div class="col-auto"><input type="text" class="form-control" name="description"></div></td>
                                     <td>
                                         <div class="col-auto">
                                             <select type="text" class="form-select">
@@ -181,22 +184,29 @@
                                             </select>
                                         </div>
                                     </td>
-                                    <td><div class="col-auto"><input type="text" class="form-control"></div></td>
+                                    <td><div class="col-auto"><input type="text" class="form-control" name="remarks"></div></td>
                                     <td>
                                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <button class="btn btn-success bi bi-plus"></button>
-                                        <button class="btn btn-danger"><i class="bi bi-dash"></i></button>
+                                        <button type="button" class="btn btn-success bi bi-plus" id="addrow"></button>
+                                        <button type="button" class="btn btn-danger" id="removerow"><i class="bi bi-dash"></i></button>
                                     </div>
                                     </td>
                                 </tr>
-                
+                                
                             </tbody>
                           </table>
+                          <div class="sbutton" style="text-align: center !important">
+                          <button type="submit" class="btn btn-primary" style="margin: auto !important">Submit</button>
+                          </div>
+                        </form>
                     </div>
                 </div>
             </div>
            
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

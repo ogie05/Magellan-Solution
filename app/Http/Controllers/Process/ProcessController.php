@@ -63,4 +63,22 @@ class ProcessController extends Controller
     public function processgeneratedqr(){
         return view('layouts.admin.processFolder.generatedqr');
     }
+
+    public function submit(Request $req){
+        if($req->filled('uid','serial','description','brand','model','type','remarks')){
+            ProcessQR::create([
+                'unique_id'=>$req->uid,
+                'serial_no' =>$req->serial,
+                'description' => $req->description,
+                'brand_id' => $req->brand,
+                'model_id' => $req->model,
+                'type_id' => $req->type,
+                'remarks' => $req->remarks
+            ]);
+        }else{
+            return 123;
+        }
+        
+        return back();
+    }
 }

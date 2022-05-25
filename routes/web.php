@@ -61,6 +61,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/process/generateqrcode',[ProcessController::class,'generateqr'])->name('generateqrcode');
 
     Route::get('/process/manual-encode',[ProcessController::class,'manual'])->name('manualencode');
+    Route::post('/process/manual-encode/submit',[ProcessController::class,'submit'])->name('manualencode-submit');
     Route::get('/loghistory', [LogController::class,'index'])->name('log');
 });
 

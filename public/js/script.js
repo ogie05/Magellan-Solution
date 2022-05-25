@@ -97,3 +97,25 @@ $('.delbtype').click(function(){
     }
   })
 });
+
+var c = 2;
+$('#addrow').on("click",function(){
+
+  var count = c++;
+  var cl = $('#manualt tbody tr:last').clone();
+  cl.find("#manualid").text(count);
+  $('#manualt').append(cl);
+  console.log(count);
+
+if($('#manualt tr').length == 3){
+  $('#manualt td:last').remove();
+}
+});
+
+
+$('#removerow').on("click",function(){
+  if($('#manualt tr').length != 2){
+    $('#manualt tr:last').remove();
+    c--;
+  }
+});
