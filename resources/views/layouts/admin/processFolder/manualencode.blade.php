@@ -116,12 +116,12 @@
                             </thead>
                             <tbody>
                                 
-                                <tr>
+                                <tr id="1">
                                     <td id="manualid" value="1">1</td>
-                                    <td><div class="col-auto"><input type="text" class="form-control" name="uid"></div></td>
+                                    <td><div class="col-auto"><input type="text" class="form-control" name="uid[]" id="unique1"></div></td>
                                     <td>
                                         <div class="col-auto">
-                                            <select type="text" class="form-select" name="type">
+                                            <select type="text" class="form-select" name="type[]">
                                                 <option selected>Select</option>
                                                 @foreach ($types as $type)
                                                     <option value="{{ $type->id }}">{{ $type->name }}</option>
@@ -132,7 +132,7 @@
                                     </td>
                                     <td>
                                         <div class="col-auto">
-                                            <select type="text" class="form-select" name="brand">
+                                            <select type="text" class="form-select" name="brand[]">
                                                 <option selected>Select</option>
                                                 @foreach ($brands as $brand)
                                                     <option value="{{ $brand->id }}">{{ $brand->name }}</option>
@@ -142,7 +142,7 @@
                                     </td>
                                     <td>
                                         <div class="col-auto">
-                                            <select type="text" class="form-select" name="model">
+                                            <select type="text" class="form-select" name="model[]">
                                                 <option selected>Select</option>
                                                 @foreach ($models as $model)
                                                     <option value="{{ $model->id }}">{{ $model->name }}</option>
@@ -150,8 +150,8 @@
                                             </select>
                                         </div>
                                     </td>
-                                    <td><div class="col-auto"><input type="text" class="form-control" name="serial"></div></td>
-                                    <td><div class="col-auto"><input type="text" class="form-control" name="description"></div></td>
+                                    <td><div class="col-auto"><input type="text" class="form-control" name="serial[]"></div></td>
+                                    <td><div class="col-auto"><input type="text" class="form-control" name="description[]"></div></td>
                                     <td>
                                         <div class="col-auto">
                                             <select type="text" class="form-select">
@@ -184,7 +184,7 @@
                                             </select>
                                         </div>
                                     </td>
-                                    <td><div class="col-auto"><input type="text" class="form-control" name="remarks"></div></td>
+                                    <td><div class="col-auto"><input type="text" class="form-control" name="remarks[]"></div></td>
                                     <td>
                                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                         <button type="button" class="btn btn-success bi bi-plus" id="addrow"></button>

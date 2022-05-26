@@ -104,8 +104,11 @@ $('#addrow').on("click",function(){
   var count = c++;
   var cl = $('#manualt tbody tr:last').clone();
   cl.find("#manualid").text(count);
+  cl.attr('id',count);
+  // cl.find("#unuqie").attr('id',"unique"+count)
   $('#manualt').append(cl);
   console.log(count);
+  $('#manualt tr ')
 
 if($('#manualt tr').length == 3){
   $('#manualt td:last').remove();

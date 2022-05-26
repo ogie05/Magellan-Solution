@@ -65,19 +65,24 @@ class ProcessController extends Controller
     }
 
     public function submit(Request $req){
-        if($req->filled('uid','serial','description','brand','model','type','remarks')){
-            ProcessQR::create([
+        // if($req->filled('uid','serial','description','brand','model','type','remarks')){
+            
+            foreach($req->uid as $key=>$uid){
+            // ProcessQR::create([
+                $units[] = [
                 'unique_id'=>$req->uid,
-                'serial_no' =>$req->serial,
-                'description' => $req->description,
-                'brand_id' => $req->brand,
-                'model_id' => $req->model,
-                'type_id' => $req->type,
-                'remarks' => $req->remarks
-            ]);
-        }else{
-            return 123;
-        }
+                'serial_no' =>$req->serial[$key],
+                'description' => $req->description[$key],
+                'brand_id' => $req->brand[$key],
+                'model_id' => $req->model[$key],
+                'type_id' => $req->type[$key],
+                'remarks' => $req->remarks[$key]];
+            // ]);
+            }
+            ProcessQR::create($units);
+        // }else{
+        //     return "error";
+        // }
         
         return back();
     }
