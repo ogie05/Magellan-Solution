@@ -13,7 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/icon.png') }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -23,8 +23,8 @@
     <link href="{{ asset('css/des.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    
-    
+
+
 </head>
 <body>
 
@@ -39,13 +39,13 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-        
+
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav me-auto">
-        
+
                             </ul>
-        
+
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ms-auto">
                                 <!-- Authentication Links -->
@@ -55,7 +55,7 @@
                                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                         </li>
                                     @endif
-        
+
                                     @if (Route::has('register'))
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -67,7 +67,7 @@
                                             <i class="bi bi-person-fill fs-5"></i>
                                             {{ Auth::user()->name }}
                                         </a>
-        
+
                                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" ><i class="bi bi-person-fill width="16" height="16""></i> Profile</a>
                                             <a class="dropdown-item" ><i class="bi bi-gear-fill"></i>  Settings</a>
@@ -78,7 +78,7 @@
                                                              <i class="bi bi-arrow-right-square-fill"></i>
                                                 {{ __('Logout') }}
                                             </a>
-        
+
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf
                                             </form>
@@ -124,12 +124,12 @@
         $(document).ready( function () {
         $('#view').DataTable({
             "scrollX":true
-            
+
         });
         $('#logs').DataTable({
             "scrollX":true
         });
-        
+
         } );
     </script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

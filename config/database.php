@@ -65,11 +65,11 @@ return [
 
         'inventory' => [
             'driver' => 'mysql',
-            'host' => '10.10.80.47',
+            'host' => 'localhost',
             'port' => '3306',
-            'database' => 'inventory-management',
-            'username' => 'webdev',
-            'password' => '1234%^&*',
+            'database' => 'inventory',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',

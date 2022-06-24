@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/icon.png') }}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -36,13 +36,13 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-        
+
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav me-auto">
-        
+
                             </ul>
-        
+
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ms-auto">
                                 <!-- Authentication Links -->
@@ -52,7 +52,7 @@
                                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                         </li>
                                     @endif
-        
+
                                     @if (Route::has('register'))
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -64,7 +64,7 @@
                                             <i class="bi bi-person-fill fs-5"></i>
                                             {{ Auth::user()->name }}
                                         </a>
-        
+
                                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" ><i class="bi bi-person-fill width="16" height="16""></i> Profile</a>
                                             <a class="dropdown-item" ><i class="bi bi-gear-fill"></i>  Settings</a>
@@ -75,7 +75,7 @@
                                                              <i class="bi bi-arrow-right-square-fill"></i>
                                                 {{ __('Logout') }}
                                             </a>
-        
+
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf
                                             </form>
@@ -96,7 +96,7 @@
                         <form action="{{ route('manualencode-submit') }}" method="POST">
                             @csrf
                         <table class="table table-hover table-responsive brand" id="manualt" style="display:block;overflow-x:auto">
-                            
+
                             <thead>
                               <tr>
                                 <th scope="col">Id</th>
@@ -115,7 +115,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                                
+
                                 <tr id="1">
                                     <td id="manualid" value="1">1</td>
                                     <td><div class="col-auto"><input type="text" class="form-control" name="uid[]" id="unique1"></div></td>
@@ -126,7 +126,7 @@
                                                 @foreach ($types as $type)
                                                     <option value="{{ $type->id }}">{{ $type->name }}</option>
                                                 @endforeach
-                                                
+
                                             </select>
                                         </div>
                                     </td>
@@ -192,7 +192,7 @@
                                     </div>
                                     </td>
                                 </tr>
-                                
+
                             </tbody>
                           </table>
                           <div class="sbutton" style="text-align: center !important">
@@ -202,11 +202,11 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    
+
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>
