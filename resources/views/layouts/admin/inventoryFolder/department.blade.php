@@ -1,15 +1,16 @@
 @extends('layouts.admin.inventory')
 @section('inv')
+@include('sweetalert::alert')
 <div class="container">
     <div class="row">
         <div class="col-md-12" style="margin: 2% !important">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#department">
                 Add new department
               </button>
-            
+
             <!-- Button trigger modal -->
-            
-            
+
+
               <!-- Modal -->
               <div class="modal fade" id="department" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -38,7 +39,7 @@
                   </div>
                 </div>
               </div>
-            
+
         </div>
     </div>
     <div class="row">
@@ -62,7 +63,7 @@
                 <tbody>
                     @foreach ($departments as $deps)
                     <tr>
-                        <td>{{ $deps->id }}</td>   
+                        <td>{{ $deps->id }}</td>
                         <td>{{ $deps->name }}</td>
                         <td>{{ $deps->status }}</td>
                         <td>{{ $deps->remarks }}</td>
@@ -79,13 +80,13 @@
                         <td>{{ $deps->updated_at }}</td>
                         <td>{{ $deps->tag_deleted }}</td>
                          <td>{!! view('layouts.admin.inventoryFolder.editmodaldep',['id'=>$deps->id,'name'=>$deps->name,'remarks'=>$deps->remarks])!!} </td>
-                        
-                        <td> 
-                           {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a> 
+
+                        <td>
+                           {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a>
                            <a href="{{ route('delete',$brand->id) }}">  --}}
                            <button type="button" class="btn btn-danger delbdep" data-href="{{ route('depdel',$deps->id) }}">Delete</button>
-                        </td> 
-                        
+                        </td>
+
                     </tr>
                     @endforeach
                 </tbody>

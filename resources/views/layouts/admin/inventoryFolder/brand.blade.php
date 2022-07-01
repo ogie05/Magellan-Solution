@@ -1,15 +1,16 @@
 @extends('layouts.admin.inventory')
 @section('inv')
+@include('sweetalert::alert')
 <div class="container">
   <div class="row">
     <div class="col-md-12" style="margin: 2% !important">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#brand">
             Add new brand
           </button>
-        
+
         <!-- Button trigger modal -->
-        
-        
+
+
           <!-- Modal -->
           <div class="modal fade" id="brand" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -38,7 +39,7 @@
               </div>
             </div>
           </div>
-        
+
     </div>
 </div>
     <div class="row">
@@ -62,7 +63,7 @@
                 <tbody>
                     @foreach ($brands as $brand)
                     <tr>
-                        <td>{{ $brand->id }}</td>   
+                        <td>{{ $brand->id }}</td>
                         <td>{{ $brand->name }}</td>
                         <td>{{ $brand->status }}</td>
                         <td>{{ $brand->remarks }}</td>
@@ -79,16 +80,16 @@
                         <td>{{ $brand->updated_at }}</td>
                         <td>{{ $brand->tag_deleted }}</td>
                         <td>{!! view('layouts.admin.inventoryFolder.editmodal',['id'=>$brand->id,'name'=>$brand->name,'remarks'=>$brand->remarks]) !!}</td>
-                        
+
                         <td>
                           {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a> --}}
                           {{-- <a href="{{ route('delete',$brand->id) }}"> --}}
                           <button type="button" class="btn btn-danger delb" data-href="{{ route('delete',$brand->id) }}">Delete</button>
                         </td>
-                        
+
                     </tr>
                     @endforeach
-                  
+
                 </tbody>
               </table>
         </div>

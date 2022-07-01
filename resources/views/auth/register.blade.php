@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -68,6 +68,11 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-1 mt-1">
+                                <p style="text-align:center">Already have an account? <span><a href="{{ route('login') }}">Login here</a></span></p>
+                            </div>
+                         </div>
                     </form>
                 </div>
             </div>

@@ -1,15 +1,16 @@
 @extends('layouts.admin.inventory')
 @section('inv')
+@include('sweetalert::alert')
 <div class="container">
     <div class="row">
         <div class="col-md-12" style="margin: 2% !important">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#model">
                 Add new model
               </button>
-            
+
             <!-- Button trigger modal -->
-            
-            
+
+
               <!-- Modal -->
               <div class="modal fade" id="model" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -38,7 +39,7 @@
                   </div>
                 </div>
               </div>
-            
+
         </div>
     </div>
     <div class="row">
@@ -62,7 +63,7 @@
                 <tbody>
                   @foreach ($models as $mod)
                   <tr>
-                      <td>{{ $mod->id }}</td>   
+                      <td>{{ $mod->id }}</td>
                       <td>{{ $mod->name }}</td>
                       <td>{{ $mod->status }}</td>
                       <td>{{ $mod->remarks }}</td>
@@ -79,16 +80,16 @@
                       <td>{{ $mod->updated_at }}</td>
                       <td>{{ $mod->tag_deleted }}</td>
                        <td>{!! view('layouts.admin.inventoryFolder.editmodalmod',['id'=>$mod->id,'name'=>$mod->name,'remarks'=>$mod->remarks])!!} </td>
-                      
-                      <td> 
-                         {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a> 
+
+                      <td>
+                         {{-- <a href="{{ route('delete',$brand->id) }}" id="hrefdel"></a>
                          <a href="{{ route('delete',$brand->id) }}">  --}}
                          <button type="button" class="btn btn-danger delbmod" data-href="{{ route('moddel',$mod->id) }}">Delete</button>
-                      </td> 
-                      
+                      </td>
+
                   </tr>
                   @endforeach
-                   
+
                 </tbody>
               </table>
         </div>

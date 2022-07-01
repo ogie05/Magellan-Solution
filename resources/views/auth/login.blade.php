@@ -46,7 +46,7 @@
                             <label class="form-check-label rememberLbl" for="remember">
                                 {{ __('Remember Me') }}
                             </label>
-                        
+
                         </div>
                     </div>
                     <div class="col-md-6 forgot">
@@ -57,12 +57,17 @@
                         @endif
                     </div>
                 </div>
-               
+
                 <div class="row mb-0">
                     <div class="col-md-8 offset-md-1">
                         <button type="submit" class="btn btn-primary loginb">
                             {{ __('Login') }}
                         </button>
+                    </div>
+                </div>
+                <div class="row mb-0">
+                    <div class="col-md-8 offset-md-1 mt-1">
+                        <p style="text-align:center">Dont have an account? <span><a href="{{ route('register') }}">Register here</a></span></p>
                     </div>
                 </div>
             </div>

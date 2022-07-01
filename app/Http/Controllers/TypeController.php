@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Type;
 use App\Models\LogHistory;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TypeController extends Controller
 {
@@ -16,7 +17,7 @@ class TypeController extends Controller
     }
 
     public function create(Request $req){
-
+        if($req->filled('name') && $req->filled('remarks') && $req->filled('alias')){
         Type::create([
             'name' => $req->name,
             'alias' => $req->alias,
@@ -24,7 +25,7 @@ class TypeController extends Controller
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id
         ]);
-
+        Alert::success('Success', 'Added new type');
         $name = Auth::user()->name;
         LogHistory::create([
             'description' => "New type created by ".$name,
@@ -32,8 +33,12 @@ class TypeController extends Controller
             'user_id' => Auth::user()->id,
             'tag_deleted' =>0
         ]);
-
         return back();
+        }
+        else{
+            Alert::error('Empty Input', 'Fill up all fields');
+            return back();
+        }
     }
 
     public function edit(Request $req){
@@ -43,7 +48,7 @@ class TypeController extends Controller
             'alias' => $req->alias,
             'remarks' => $req->remarks,
         ]);
-
+        Alert::success('Success', 'Type Edit Successfully');
         $name = Auth::user()->name;
         LogHistory::create([
             'description' => "Type id: ".$id." name edited to ".$req->name." alias edited to ".$req->alias." and remarks edited to ".$req->remarks." by ".$name,

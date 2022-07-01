@@ -130,6 +130,11 @@
             "scrollX":true
         });
 
+        }
+         );
+
+        $(document).ready( function () {
+            $('#genqr').DataTable();
         } );
     </script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

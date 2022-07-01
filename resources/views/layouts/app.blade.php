@@ -35,7 +35,6 @@
                             <p class="titlel" style="">THE <span style="color:#00B0FF">#1 CALL CENTER</span> SERVICES PROVIDER IN THE PHILLIPINES TRUSTED BY OVER 100+ SMES MONTHLY
                             </p>
                         </div>
-
                         @yield('content')
                     </div>
                 </div>

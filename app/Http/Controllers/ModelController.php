@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\MyModel;
 use App\Models\LogHistory;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ModelController extends Controller
 {
@@ -16,13 +17,14 @@ class ModelController extends Controller
     }
 
     public function create(Request $req){
+        if($req->filled('name') && $req->filled('remarks')){
         MyModel::create([
             'name' => $req->name,
             'remarks' => $req->remarks,
             'created_by' => Auth::user()->id,
             'updated_by' => Auth::user()->id
         ]);
-
+        Alert::success('Success', 'Added new model');
         $name = Auth::user()->name;
         LogHistory::create([
             'description' => "New model created by ".$name,
@@ -32,6 +34,11 @@ class ModelController extends Controller
         ]);
 
         return back();
+        }
+        else{
+            Alert::error('Empty Input', 'Fill up all fields');
+            return back();
+        }
     }
 
     public function edit(Request $req){
@@ -40,7 +47,7 @@ class ModelController extends Controller
             'name' => $req->name,
             'remarks' => $req->remarks
         ]);
-
+        Alert::success('Success', 'Model Edit Successfully');
         $name = Auth::user()->name;
         LogHistory::create([
             'description' => "Model id: ".$id." name edited to ".$req->name." and remarks edited to ".$req->remarks." by ".$name,

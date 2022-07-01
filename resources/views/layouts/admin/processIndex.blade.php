@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('main')
+@include('sweetalert::alert')
 <div class="container">
     <div class="row">
         <div class="col-md-3 log-header">
@@ -14,16 +15,16 @@
 
               </div>
 
-              
+
             </div>
 
             <div class="col-md-7 offset-1">
               <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#generateqr" style="margin-top: 2%">Generate QR Code</button>
               <a href="{{ route('manualencode') }}" target="_blank"><button class="btn btn-primary" style="margin-top: 2%">Manual Encode</button></a>
-              <a href=""><button class="btn btn-primary" style="margin-top: 2%">Process Generated QR</button></a>
-              <a href=""><button class="btn btn-warning" style="margin-top: 2%">Register QR</button></a>
+              <a href="{{ route('generatedqr') }}"><button class="btn btn-primary" style="margin-top: 2%">Process Generated QR</button></a>
+              <a href=""><button class="btn btn-warning" style="margin-top: 2%">Print QR</button></a>
             </div>
-  
+
         </div>
         <div class="row">
           @yield('process')
@@ -91,7 +92,7 @@
                     <span class="input-group-text" id="basic-addon1">Date of purchase</span>
                     <input type="date" class="form-control" placeholder="date_of_purchase" aria-label="Name" aria-describedby="basic-addon1" value="" name="dop">
                 </div>
-              
+
           </div>
           <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
