@@ -1,5 +1,14 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
+
+![magellan](https://user-images.githubusercontent.com/84136773/176895165-840ff166-a3bf-4467-b323-89aee240b6b5.png)
+![image](https://user-images.githubusercontent.com/84136773/176895442-74154af5-fbd2-4303-b5e5-4660f13aef86.png)
+![image](https://user-images.githubusercontent.com/84136773/176895469-6c777b71-8331-4d65-a021-3234ba29a48e.png)
+![image](https://user-images.githubusercontent.com/84136773/176895507-ea7bff05-cc11-4279-9795-611ede1d33b2.png)
+![image](https://user-images.githubusercontent.com/84136773/176895554-400749ea-aa12-46b2-8b3d-f6adb3491122.png)
+
+
+
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
